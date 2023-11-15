@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery">
+        <ul class="menu">
+            <li class="button active" data-filter="all">all</li>
+            <li class="button" data-filter="ice-cream">ice-cream</li>
+            <li class="button" data-filter="pizza">pizza</li>
+            <li class="button" data-filter="pasta">pasta</li>
+            <li class="button" data-filter="beverages">beverages</li>
+        </ul>
+
+    <div class="image-container">
+        <a href="image/icecream1.jpeg" class="image ice-cream">
+            <img src="image/icecream1.jpeg">
+            <span>Chocolate ice cream</span>
+        </a>
+        <a href="image/icecream2.jpeg" class="image ice-cream">
+            <img src="image/icecream2.jpeg">
+            <span>Strawberry ice cream</span>
+        </a>
+        <a href="image/icecream3.jpg" class="image ice-cream">
+            <img src="image/icecream3.jpg">
+            <span>Cone ice cream</span>
+        </a>
+        
+        <a href="image/pizza1.jpeg" class="image pizza">
+            <img src="image/pizza1.jpeg">
+            <span>Margherita pizza</span>
+        </a>
+        <a href="image/pizza2.jpeg" class="image pizza">
+            <img src="image/pizza2.jpeg">
+            <span>Extra cheese pizza</span>
+        </a>
+        <a href="image/pizza3.jpg" class="image pizza">
+            <img src="image/pizza3.jpg">
+            <span>Veggie pizza</span>
+        </a>
+
+        <a href="image/pasta1.jpeg" class="image pasta">
+            <img src="image/pasta1.jpeg">
+            <span>Fussili pasta</span>
+        </a>
+        <a href="image/pasta2.jpeg" class="image pasta">
+            <img src="image/pasta2.jpeg">
+            <span>Penne pasta</span>
+        </a>
+        <a href="image/pasta3.jpg" class="image pasta">
+            <img src="image/pasta3.jpg">
+            <span>Spaghetti pasta</span>
+        </a>
+
+        <a href="image/drink1.jpeg" class="image beverages">
+            <img src="image/drink1.jpeg">
+            <span>Fresh beverages</span>
+        </a>
+        <a href="image/drink2.jpg" class="image beverages">
+            <img src="image/drink2.jpg">
+            <span>Juice</span>
+        </a>
+        <a href="image/drink3.jpeg" class="image beverages">
+            <img src="image/drink3.jpeg">
+            <span>Dairy</span>
+        </a>
+    </div>
+    <div class="accordion">
+        <h1 style="text-align: center; margin-top: 20px;">FAQ</h1>
+        <div class="accordion-item">
+            <div class="item-header">
+                <h2 class="title">How do I Claim a Free Coupon?</h2>
+                <div class="icon">+</div>
+            </div>
+            <p class="text">Coupons are free to claim, use the search or find somewhere close by using the Google Map View.
+                Once you've found a great coupon offer, click the day you wish to use it, fill out your details to complete.
+                You'll instantly receive your free coupon to your email inbox 
+                To redeem - simply present coupon to staff when paying.</p>
+        </div>
+        <div class="accordion-item">
+            <div class="item-header">
+                <h2 class="title">How do I Make a regular Table Booking?</h2>
+                <div class="icon">+</div>
+            </div>
+            <p class="text">It's a piece of cake - once you've found your preferred restaurant simply select your Date and Time required, and then so long as we have an email address and phone number your booking is instantly confirmed the minute you hit "Book"</p>
+        </div>
+        <div class="accordion-item">
+            <div class="item-header">
+                <h2 class="title">How can I be certain my booking's been received?</h2>
+                <div class="icon">+</div>
+            </div>
+            <p class="text">To help our restaurants manage their sittings we ask our diners to give at least 24 hours' notice of any cancellations. You can do this by calling your restaurant direct.
+                If you need to cancel less than 24 hours before your dinner date you can use the cancellation link within your reminder email (sent 24 hours before your reservation time). We also encourage our diners to follow this up with a call direct to the restaurant.
+                To amend a booking please call the restaurant direct, again endeavouring to give at least 24 hours' notice.</p>
+        </div>
+        <div class="accordion-item">
+            <div class="item-header">
+                <h2 class="title">How do I cancel a booking?</h2>
+                <div class="icon">+</div>
+            </div>
+            <p class="text">We'll send an instant confirmation email to the address used in your booking. If you book more than a day ahead, we'll also send a reminder 24 hours before your booking is due. You can reconfirm your booking using a link in your reminder email.</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.button').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            var filter = $(this).attr('data-filter');
+
+            if (filter == 'all') {
+                $('.image').show(400);
+            } else {
+                $('.image').not('.' + filter).hide(200);
+                $('.image').filter('.' + filter).show(400);
+            }
+        });
+
+        $('.gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+        });
+
+        $('.item-header').click(function () {
+            var accordionItem = $(this).parent();
+            accordionItem.toggleClass("active").siblings(".accordion-item").removeClass("active");
+            accordionItem.find('.text').slideToggle(400);
+            $(".icon").text("+");
+            $(this).children(".icon").text(accordionItem.hasClass("active") ? "-" : "+");
+        });
+    });
+</script>
+
+</body>
+</html>
