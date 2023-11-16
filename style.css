@@ -144,3 +144,36 @@
 .accordion-item.active .text {
     max-height: 600px;
 }
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: bisque;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    
+  }
+  
+  ul.topnav li {float: center;}
+  
+  ul.topnav li {
+    display: inline-block; /* Display list items side by side */
+  }
+
+  ul.topnav li a {
+    display: block;
+    color: darkslategray;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-size: 30px;
+    justify-content: space-around;
+  }
+  
+  ul.topnav li a:hover:not(.active) {background-color: #ddd;}
+
+  
+  

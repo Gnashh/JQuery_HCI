@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="zoomsl.js" type="text/javascript"></script>
+    <script>
+    $(document).ready(function () {
+    $('.side-img').click(function () {
+        $(".big-img").attr('src',$(this).attr('src'));
+    });
+
+    $('.big-img').imagezoomsl ({
+        zoomrange:[3,3]
+    });
+});
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+ul {
+    list-style-type: none;
+}
+
+.image {
+    float: left;
+    margin-bottom: 10px;
+}
+
+ul li img {
+    max-width: 250px;
+    max-height: 250px; 
+    margin-left: 100px;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.big-img{
+    width: 470px;
+    height: 510px;
+    margin-left: 300px;
+    margin-top: 20px;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+</style>
+</head>
+<body>
+    <ul class="topnav">
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Zoom.html">Zoom in</a></li>
+    </ul>
+
+    <ul class="image">
+        <li><img src="image/icecream2.jpeg" class="side-img"></li>
+        <li><img src="image/drink2.jpg" class="side-img"></li>
+        <li><img src="image/pizza3.jpg" class="side-img"></li>
+        <li><img src="image/pasta3.jpg" class="side-img"></li>
+    </ul>
+    <img src="image/icecream2.jpeg" class="big-img">
+</body>
+</html>

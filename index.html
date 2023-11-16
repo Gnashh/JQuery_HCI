@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <ul class="topnav">
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Zoom.html">Zoom in</a></li>
+    </ul>
+    
     <div class="gallery">
         <ul class="menu">
             <li class="button active" data-filter="all">all</li>
@@ -69,44 +75,6 @@
             <img src="image/drink3.jpeg">
             <span>Dairy</span>
         </a>
-    </div>
-    <div class="accordion">
-        <h1 style="text-align: center; margin-top: 20px;">FAQ</h1>
-        <div class="accordion-item">
-            <div class="item-header">
-                <h2 class="title">How do I Claim a Free Coupon?</h2>
-                <div class="icon">+</div>
-            </div>
-            <p class="text">Coupons are free to claim, use the search or find somewhere close by using the Google Map View.
-                Once you've found a great coupon offer, click the day you wish to use it, fill out your details to complete.
-                You'll instantly receive your free coupon to your email inbox 
-                To redeem - simply present coupon to staff when paying.</p>
-        </div>
-        <div class="accordion-item">
-            <div class="item-header">
-                <h2 class="title">How do I Make a regular Table Booking?</h2>
-                <div class="icon">+</div>
-            </div>
-            <p class="text">It's a piece of cake - once you've found your preferred restaurant simply select your Date and Time required, and then so long as we have an email address and phone number your booking is instantly confirmed the minute you hit "Book"</p>
-        </div>
-        <div class="accordion-item">
-            <div class="item-header">
-                <h2 class="title">How can I be certain my booking's been received?</h2>
-                <div class="icon">+</div>
-            </div>
-            <p class="text">To help our restaurants manage their sittings we ask our diners to give at least 24 hours' notice of any cancellations. You can do this by calling your restaurant direct.
-                If you need to cancel less than 24 hours before your dinner date you can use the cancellation link within your reminder email (sent 24 hours before your reservation time). We also encourage our diners to follow this up with a call direct to the restaurant.
-                To amend a booking please call the restaurant direct, again endeavouring to give at least 24 hours' notice.</p>
-        </div>
-        <div class="accordion-item">
-            <div class="item-header">
-                <h2 class="title">How do I cancel a booking?</h2>
-                <div class="icon">+</div>
-            </div>
-            <p class="text">We'll send an instant confirmation email to the address used in your booking. If you book more than a day ahead, we'll also send a reminder 24 hours before your booking is due. You can reconfirm your booking using a link in your reminder email.</p>
-        </div>
-    </div>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -131,14 +99,6 @@
             gallery: {
                 enabled: true
             }
-        });
-
-        $('.item-header').click(function () {
-            var accordionItem = $(this).parent();
-            accordionItem.toggleClass("active").siblings(".accordion-item").removeClass("active");
-            accordionItem.find('.text').slideToggle(400);
-            $(".icon").text("+");
-            $(this).children(".icon").text(accordionItem.hasClass("active") ? "-" : "+");
         });
     });
 </script>
